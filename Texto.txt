@@ -3,3 +3,11 @@ https://github.com/gustavohsilva16-png/aula-02-04-2016
 git clone https://github.com/gustavohsilva16-png/aula-02-04-2016
 
 git status
+
+git add .
+
+git status
+
+git commit -m "alterando o arquivo texto
+
+git push
