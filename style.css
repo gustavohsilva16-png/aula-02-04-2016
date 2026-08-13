@@ -1,77 +1,178 @@
-body{
-    background: #170639;
-    color: rgb(208, 196, 196);
-    font-family: Arial, sans-serif;
+/* ==========================================================================
+   1. ESTILOS GERAIS DA PÁGINA
+   ========================================================================== */
+body {
+    background: #170639; /* Cor de fundo roxo escuro para o site todo */
+    color: rgb(208, 196, 196); /* Cor padrão do texto (cinza claro) */
+    font-family: Arial, sans-serif; /* Fonte padrão limpa e legível */
     margin: 0;
     padding: 0;
 }
 
-.caixa{
+/* Container central que segura todo o conteúdo do site */
+.caixa {
     width: 600px;
-    margin-left: 20cap;
-    padding: 200px;
-    border: 6px solid white;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.1);
-    top: 80px;
+    margin: 0 auto; /* Centraliza o container na tela na horizontal */
+    padding: 40px; /* Espaçamento interno em volta de todo o conteúdo */
+    border: 6px solid white; /* Borda branca bem grossa */
+    border-radius: 15px; /* Bordas arredondadas */
+    background: rgba(255, 255, 255, 0.1); /* Fundo branco semi-transparente */
+    top: 80px; /* Empurra a caixa para baixo */
     position: relative;
 }
 
-.caixaTeruel1{
+/* ==========================================================================
+   2. TEXTOS PRINCIPAIS
+   ========================================================================== */
+.titulo {
+    color: #ffd700; /* Cor amarelada/dourada para o título principal */
+    text-align: center; /* Centraliza o texto */
+    font-size: 36px;
+}
+
+.descricao {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ==========================================================================
+   3. SEÇÃO DE PRODUTOS (CARDS)
+   ========================================================================== */
+/* Lista contendo os dois produtos */
+ul.UL {
+    list-style: none; /* Remove as bolinhas pretas padrão da lista (ul) */
+    padding: 0;
+    display: flex; /* Flexbox: faz com que os cards de produto fiquem lado a lado */
+    gap: 20px; /* Cria um espaço de 20px entre o Card 1 e o Card 2 */
+    margin: 20px 0;
+}
+
+/* Card do Produto 1 */
+.caixaTeruel1 {
     width: 120px;
     padding: 15px;
     border: 1px solid white;
     border-radius: 20px;
-    background: rgba(13, 122, 155, 0.338);
-
-    position: absolute;
-    bottom: 60px;
-    left: 140px;
-
+    background: rgba(89, 180, 207, 0.66); /* Fundo azul claro transparente */
     text-align: center;
 }
 
-.caixaTeruel1 img{
-    
+.caixaTeruel1 img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Ajusta a imagem sem distorcer as proporções */
+}
+
+.caixaTeruel1 .valor {
+    display: block;
+    margin-top: 0px;
+    font-size: 18px;
+    color: rgb(239, 239, 239);
+}
+
+/* Card do Produto 2 */
+.caixaTeruel2 {
+    width: 120px;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: rgba(89, 180, 207, 0.66);
+    text-align: center;
+}
+
+.caixaTeruel2 img {
     width: 100px;
     height: 100px;
     object-fit: contain;
 }
 
-.caixaTeruel1 .valor{
+.caixaTeruel2 .valor {
     display: block;
-    margin-top: 10px;
+    margin-top: 0px;
     font-size: 18px;
-    color: white;
-
-
+    color: rgb(239, 239, 239);
 }
 
-.titulo{
-    color: #ffd700;
-    text-align: center;
-    font-size: 36px;
-}
-
-.descricao{
-    text-align: center;
-    font-size: 18px;
-}
-
-.botao{
+/* ==========================================================================
+   4. BOTÕES
+   ========================================================================== */
+/* Botão "Comprar Agora" */
+.botao {
     background: #000000;
     color: white;
     border: 1px solid white;
     padding: 11px 30px;
     font-size: 20px;
     border-radius: 10px;
-    cursor: pointer;
-
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
+    cursor: pointer; /* Transforma o ponteiro do mouse na mãozinha de clicar */
 }
 
-.botao:hover{
-    background: #ff1f5b;
+/* Botão do Discord */
+.botaoDC {
+    background-color: #5865F2; /* Roxo oficial do Discord */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Transição suave de cor no hover */
+}
+
+.botaoDC:hover {
+    background-color: #111863; /* Cor mais escura quando passa o mouse por cima */
+}
+
+/* ==========================================================================
+   5. JANELA FLUTUANTE (MODAL DO PIX)
+   ========================================================================== */
+/* Tela preta transparente de fundo quando o modal abre */
+.modal-overlay {
+    display: none; /* Inicia ESCONDIDO. O JavaScript muda para 'flex' ao clicar no botão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro cobrindo a tela toda */
+    z-index: 1000; /* Fica acima de qualquer outro elemento na tela */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa branca/roxa central onde fica o QR Code */
+.modal-conteudo {
+    background-color: #28027462;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+    color: white;
+}
+
+/* Botão 'X' no canto superior direito para fechar */
+.botao-fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.botao-fechar:hover {
+    color: #ff1f5b; /* Fica vermelho ao passar o mouse */
+}
+
+/* Tamanho e borda da imagem do QR Code do PIX */
+.qr-code {
+    width: 180px;
+    height: 180px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 4px solid rgb(0, 0, 0);
 }

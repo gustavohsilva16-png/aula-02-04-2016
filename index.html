@@ -14,24 +14,57 @@
     <div class="caixa">
 
         <h1 class="titulo">Venda de Pão Correio</h1>
-
         <p class="descricao">Preços a partir de 1 Wolf e 80!</p>
 
         <h2>Produtos</h2>
 
-        <ul>
+        <ul class="UL">
+            
             <li class="caixaTeruel1">
-
-                <img src="teruel.png" alt="Teruel">
-
+                <img src="IMG/Boneco_feio_pa_porra.webp" alt="Boneco Teruel">
+                <h5>Boneco Teruel</h5> 
                 <span class="valor">1 Wolf e 80</span>
-
             </li>
+
+            <li class="caixaTeruel2">
+                <img src="IMG/Boneco_feio_pra_porra_2.jpg" alt="Boneco Teruel 120 faces">
+                <h5>Boneco Teruel 120 faces</h5> 
+                <span class="valor">1 Wolf e 80</span>
+            </li>
+
         </ul>
 
-        <button class="botao">Comprar Agora</button>
+        <button class="botao" onclick="abrirModal()">Comprar Agora</button>
+
+        <a href="https://discord.gg/AvUP4W77dP" target="_blank">
+            <button class="botaoDC">Discord</button>
+        </a>
+
+        <div id="modalPix" class="modal-overlay">
+            <div class="modal-conteudo">
+                
+                <span class="botao-fechar" onclick="fecharModal()">&times;</span>
+
+                <h2>Pague a compra</h2>
+                <p>Escaneie o QR Code abaixo para pagar via PIX:</p>
+
+                <img src="IMG/pix.jpg" alt="QR Code PIX" class="qr-code">
+            </div>
+        </div>
 
     </div>
+
+    <script>
+        // Função chamada ao clicar em 'Comprar Agora' -> Exibe a janela
+        function abrirModal() {
+            document.getElementById("modalPix").style.display = "flex";
+        }
+
+        // Função chamada ao clicar no 'X' -> Esconde a janela
+        function fecharModal() {
+            document.getElementById("modalPix").style.display = "none";
+        }
+    </script>
 
 </body>
 
