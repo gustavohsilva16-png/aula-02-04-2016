@@ -107,6 +107,11 @@ ul.UL {
     cursor: pointer; /* Transforma o ponteiro do mouse na mãozinha de clicar */
 }
 
+.botao:hover {
+    background-color: #bebec7; /* Cor mais escura quando passa o mouse por cima */
+    color: rgb(0, 0, 0);
+}
+
 /* Botão do Discord */
 .botaoDC {
     background-color: #5865F2; /* Roxo oficial do Discord */
@@ -175,4 +180,16 @@ ul.UL {
     margin-top: 15px;
     border-radius: 8px;
     border: 4px solid rgb(0, 0, 0);
+}
+
+/* ==========================================================================
+   6. ELEMENTOS DIVERSOS
+   ========================================================================== */
+/* Estilo para a classe 'curto' */
+.curto {
+    color: #efefeb56; /* Cor amarelada/dourada para combinar com o título */
+    text-align: center; /* Centraliza o texto */
+    font-size: 10px; /* Ajusta o tamanho da fonte */
+    
+    margin-top: 50px; /* Margem para afastar dos botões */
 }
